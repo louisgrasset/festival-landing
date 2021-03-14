@@ -1,0 +1,61 @@
+.artists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem; }
+  .artists-article {
+    color: var(--white);
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.6); }
+    .artists-article__image {
+      width: 100%;
+      padding-bottom: 56.25%;
+      position: relative; }
+      .artists-article__image-base {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        z-index: 1;
+        filter: grayscale(1); }
+      .artists-article__image::before {
+        background-color: var(--primary);
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: darken;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2; }
+      .artists-article__image::after {
+        background-color: black;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: lighten;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2; }
+    .artists-article__title {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: space-between; }
+      .artists-article__title h3, .artists-article__title .title-reverse {
+        text-align: left;
+        color: var(--primary);
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 0;
+        padding: 0; }
+      .artists-article__title .title-reverse span {
+        position: relative;
+        display: inline-block;
+        transform: translateY(-0.6rem) rotateZ(180deg) rotateY(180deg); }
+    .artists-article__dates {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.4rem; }
